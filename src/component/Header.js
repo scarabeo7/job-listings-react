@@ -1,19 +1,19 @@
-import React from 'react'
-import close from "./images/icon-remove.svg"
+import React from "react";
+import close from "./images/icon-remove.svg";
 
 const Header = ({ searchKeywords, deleteKeyword, clearAll }) => {
   return (
-    <div>
+    <div className="header">
       <ul>
         {searchKeywords.map((item, index) => (
           <li key={index}>
             {item}
-            <button onClick={() => deleteKeyword(item)}>
+            <button className="button" onClick={() => deleteKeyword(item)}>
               <img src={close} alt="" />
             </button>
           </li>
         ))}
-         {/* eslint-disable-next-line */}
+        {/* eslint-disable-next-line */}
         <a href="#" onClick={() => clearAll()}>
           Clear
         </a>
@@ -22,4 +22,4 @@ const Header = ({ searchKeywords, deleteKeyword, clearAll }) => {
   );
 };
 
-export default Header
+export default Header;

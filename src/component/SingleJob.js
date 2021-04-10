@@ -32,28 +32,33 @@ const SingleJob = (props) => {
     // eslint-disable-next-line
   }, [logo]);
   return (
-    <div className="singleJob" key={props.index}>
+    <div
+      className={featured ? "singleJob singleJob--borderLeft" : "singleJob"}
+      key={props.index}
+    >
       <div className="logo">
         <img src={icon} alt="" />
       </div>
       <div className="section-1">
         <div className="company">
-          <div className="company-name">{company}</div>
+          <span className="company-name">{company}</span>
           {props.job.new && <span className="new">new!</span>}
           {featured && <span className="feature">featured!</span>}
         </div>
         <div className="position">{position}</div>
         <div className="job-details">
           <span>{postedAt}</span>
+          <span>&nbsp;•&nbsp;</span>
           <span>{contract}</span>
+          <span>&nbsp;•&nbsp;</span>
           <span>{location}</span>
         </div>
       </div>
       <div className="section-2">
         {otherDetails.map((detail, index) => (
-          <button onClick={() => props.addSearchKeywords(detail)} key={index}>
+          <span onClick={() => props.addSearchKeywords(detail)} key={index}>
             {detail}
-          </button>
+          </span>
         ))}
       </div>
     </div>
