@@ -22,7 +22,7 @@ const AllJobs = ({ jobData, addSearchKeywords, searchKeywords }) => {
 
     useEffect(() => {
       modifiedData();
-    }, [searchKeywords]);
+    }/*, [searchKeywords]*/);
   return (
     <div className="allJobs">
       {filteredData.map((job, index) => (

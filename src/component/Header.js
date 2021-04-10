@@ -13,7 +13,10 @@ const Header = ({ searchKeywords, deleteKeyword, clearAll }) => {
             </button>
           </li>
         ))}
-        <a href="#" onClick={()=>clearAll()}>Clear</a>
+         {/* eslint-disable-next-line */}
+        <a href="#" onClick={() => clearAll()}>
+          Clear
+        </a>
       </ul>
     </div>
   );
