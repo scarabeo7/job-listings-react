@@ -21,14 +21,16 @@ const SingleJob = (props) => {
   // use hook to import each job's logo
   const [icon, setIcon] = useState("");
   const svgImport = () => {
-    /*const svgLogo =*/ import(`${logo}`).then((data) => {
+    // eslint-disable-next-line
+    const svgLogo = import(`${logo}`).then((data) => {
       setIcon(data.default);
     });
   };
 
   useEffect(() => {
     svgImport();
-  }/*, [logo]*/);
+    // eslint-disable-next-line
+  }, [logo]);
   return (
     <div className="singleJob" key={props.index}>
       <div className="logo">

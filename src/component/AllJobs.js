@@ -22,7 +22,8 @@ const AllJobs = ({ jobData, addSearchKeywords, searchKeywords }) => {
 
     useEffect(() => {
       modifiedData();
-    }/*, [searchKeywords]*/);
+      // eslint-disable-next-line
+    }, [searchKeywords]);
   return (
     <div className="allJobs">
       {filteredData.map((job, index) => (
